@@ -25,7 +25,7 @@
     "mock": "node ./mock/build.js",
     "build": "tsc",
     "test": "mocha",
-    "prepare": "yarn build"
+    "prepare": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
