@@ -37,12 +37,12 @@ export function preprocessor(this: IWebpackLoaderContext, content: string, sourc
         is_keep: true,
     };
     for (const reader_state of r) {
-        const filter_state = f.next(reader_state).value;
-        p.next(Object.assign(o, reader_state, filter_state));
+        const filter_state = f.next(reader_state as any).value;
+        p.next(Object.assign(o, reader_state, filter_state) as any);
     }
     this.callback(
         null,
-        p.next({}).value,
+        p.next({} as any).value || '',
         sourcemap,
     );
 }
